@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  if(!user)
+    h1 Please Login first!
+
+  else
+      main
+          if(articles && articles.length)
+            table
+                thead
+                    th Id
+                    th Users
+                tbody
+                    each article in articles
+                        tr
+                            td= article._id
+                            td= article.username
+          else
+            h1 No Users!
+    
+  block content
+  include footer
+    

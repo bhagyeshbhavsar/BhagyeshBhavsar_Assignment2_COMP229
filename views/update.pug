@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  if(!user)
+    h1 Please Login first!
+  
+  else
+      section
+        #login
+          h1 Update Employee below
+          form(method='POST' action='/update')
+            div
+                h5 Update Contact Name
+                input(type='text' name='fname' value=employee.Contactname)
+            div
+                h5 Update Contact Number
+                input(type='text' name='lname' value=employee.ContactNumber)
+            div
+                h5 Update Email
+                input(type='text' name='email' value=employee.email)
+            div
+                input(type='hidden' name='id' value=employee.id)
+                button(type='submit' value='Submit') Submit
+  block content
+  include footer

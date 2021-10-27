@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  if(!user)
+    h1 Please Login first!
+  else
+      section
+        img(src='images/corporatelife.jpg' alt='employee_pic')
+        #login
+          h3 Insert Employee below
+          //Insert form
+          form(method='POST' action='/insert' enctype='multipart/form-data')
+            div
+                h5 Contact Name
+                input(type='text' name='fname')
+            div
+                h5 Contact Number
+                input(type='text' name='lname')
+            div
+                h5 Email
+                input(type='text' name='email')
+            div
+                button(type='submit' value='Submit') Submit
+  block content
+  include footer
